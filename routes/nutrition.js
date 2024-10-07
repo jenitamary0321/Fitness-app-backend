@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Nutrition = require('../models/nutrition.model'); // Adjust this path based on your folder structure
-// const authenticateJWT = require('../middleware/auth'); // Middleware for authentication, adjust the path
-
+const Nutrition = require('../models/nutrition.model');  
 // POST route to add nutrition data
 router.post('/', async (req, res) => {
   try {
