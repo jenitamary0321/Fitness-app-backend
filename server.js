@@ -13,14 +13,14 @@ app.use(cors());
 app.use(express.json());
 
 // Setup DB Connection
-const uri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/User"; // Fallback to local MongoDB if env var is missing
+const uri = process.env.MONGODB_URI || "mongodb://0.0.0.0:27017/User"; // Fallback to local MongoDB if env var is missing
 
 // Using Mongoose to connect to MongoDB
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then(() => console.log("Connected to MongoDB database!"))
+  .then(() => console.log("Connected to MongoDB database! "+uri))
   .catch((err) => console.error("Failed to connect to MongoDB", err));
 
 // Setup Routes
