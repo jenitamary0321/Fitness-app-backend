@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 // Connecting to MongoDB with updated options to avoid deprecation warnings
-mongoose.connect("mongodb://localhost:27017/User", {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true  // This is required for the `unique` option to work properly

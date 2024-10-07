@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Setup DB Connection
-const uri = process.env.ATLAS_URI || "mongodb://localhost:27017/User"; // Fallback to local MongoDB if env var is missing
+const uri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/User"; // Fallback to local MongoDB if env var is missing
 
 // Using Mongoose to connect to MongoDB
 mongoose.connect(uri, {
